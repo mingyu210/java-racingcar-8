@@ -10,7 +10,7 @@ public class Car {
 
     public void move(int randomNum){
         if(randomNum >=4){
-            position += randomNum;
+            position++;
         }
     }
 
