@@ -13,6 +13,10 @@ public class InputView {
 
         String input = Console.readLine().trim();
 
+        if(input.isEmpty()){
+            throw new IllegalArgumentException("자동차 이름을 한 개 이상 입력해야 합니다.");
+        }
+
         List<String> carNames = Arrays.asList(input.split(","));
 
         return carNames;
