@@ -23,6 +23,20 @@ public class InputView {
 
     }
 
+    private void validateCarNames(List<String> carNames) {
+        long distinctCount = carNames.stream().distinct().count();
+        if(distinctCount != carNames.size()){
+            throw new IllegalArgumentException("자동차 이름이 중복되었습니다.");
+        }
+
+        for(String name : carNames){
+            if(name.trim().length() > 5){
+                throw new IllegalArgumentException("자동차 이름은 5자 이하만 가능합니다: " + name.trim());
+            }
+        }
+
+    }
+
     public int inputTryCount(){
         System.out.println("시도할 횟수는 몇 회인가요?");
         String input = Console.readLine().trim();
