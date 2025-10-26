@@ -19,6 +19,7 @@ public class InputView {
 
         List<String> carNames = Arrays.asList(input.split(","));
 
+        validateCarNames(carNames);
         return carNames;
 
     }
